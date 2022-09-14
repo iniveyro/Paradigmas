@@ -1,0 +1,34 @@
+TP3
+Ejercicio 1
+
+| cadena |
+cadena:= UIManager default request: 'Ingrese una cadena'.
+
+1 to: cadena size do: [:i| 
+	((cadena at:i) isLowercase)ifTrue:
+		[
+		cadena at:i put:((cadena at:i)asUppercase) 
+		]
+	].
+].
+^cadena
+------------------------------------------------------------------
+Ejercicio 2
+
+| cadena |
+cadena:= UIManager default request: 'Ingrese una cadena'.
+
+1 to: cadena size do: [:i| 
+	((cadena at:i) isLowercase)ifTrue:
+		[
+		cadena at:i put:((cadena at:i)asUppercase) 
+		]
+	ifFalse:
+	[
+	((cadena at:i)isUppercase)ifTrue:
+		[
+		cadena at:i put:((cadena at:i)asLowercase )  
+		]. 
+	].
+].
+^cadena
