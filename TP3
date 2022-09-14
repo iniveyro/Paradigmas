@@ -32,3 +32,15 @@ cadena:= UIManager default request: 'Ingrese una cadena'.
 	].
 ].
 ^cadena
+------------------------------------------------------------
+Ejercicio 3
+
+|string cuenta|
+cuenta := 0.
+string := UIManager default request: 'Ingrese un string'.
+
+string do: [:caracter | caracter isVowel
+ifTrue: [ cuenta := cuenta + 1 ] ].
+
+^cuenta
+------------------------------------------------------------
