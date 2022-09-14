@@ -33,7 +33,21 @@ cadena:= UIManager default request: 'Ingrese una cadena'.
 ].
 ^cadena
 ------------------------------------------------------------
+
 Ejercicio 3
+
+|string cuenta long|
+cuenta := 0.
+string := UIManager default request: 'Ingrese un string'.
+long:= string size.
+
+1 to:(long/2) do: [ :i |
+		((string at:i) = (string at:long))ifFalse: [^'No es palindromo'] ifTrue:[long:=long-1].
+	 ].
+
+^'Es palindromo'
+----------------------------------------------------------
+Ejercicio 4
 
 |string cuenta|
 cuenta := 0.
