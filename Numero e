@@ -1,10 +1,10 @@
 |resultado n|
-resultado:=0.
+resultado:=0.0.
 n:=0.
 "lim n-> inf de ((1/n factorial))"
 
 [n<100]whileTrue: [ resultado:=resultado + (1/(n factorial)). n:=n+1 ].
-^resultado asFloat
+^resultado
 
 ////////////////////////////////////////////////////////////
 
@@ -15,3 +15,18 @@ n:=0.
 
 [(1/(n factorial)) > 0.00001]whileTrue: [ resultado:=resultado + (1/(n factorial)). n:=n+1 ].
 ^resultado asFloat 
+
+///////////////////////////////////////////////////////////
+
+|pi n signo|
+pi:=0.0.
+n:=0.
+signo:=0.
+Transcript clear.
+[ n < 11000 ]whileTrue: [ 
+	pi:=(((-1)**n)/((2*n)+1))+pi.
+	n:=n+1.
+	 ].
+Transcript show:'El valor de la serie es: ';show: (((pi*4)asFloat)truncateTo: 0.0001).
+
+///////////////////////////////////////////////////////////
