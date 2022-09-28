@@ -1,0 +1,17 @@
+|resultado n|
+resultado:=0.
+n:=0.
+"lim n-> inf de ((1/n factorial))"
+
+[n<100]whileTrue: [ resultado:=resultado + (1/(n factorial)). n:=n+1 ].
+^resultado asFloat
+
+////////////////////////////////////////////////////////////
+
+|resultado n|
+resultado:=0.
+n:=0.
+"lim n-> inf de ((1/n factorial))"
+
+[(1/(n factorial)) > 0.00001]whileTrue: [ resultado:=resultado + (1/(n factorial)). n:=n+1 ].
+^resultado asFloat 
