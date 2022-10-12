@@ -1,0 +1,38 @@
+12/10 -- Clases
+
+Los objetos que forman parte de una misma clase se denomina cohecion.
+
+ej: 
+
+  cadena do:[ :c| (c=$a) ifTrue:[cantidad:=cantidad+1] ]
+  el "do:" necesita que el objeto "cadena" sea una cohecion
+  
+Clases abstractas no tienen instacias, se usan como intermediaro para ir a una clase inferior.
+
+Atributos --> Variables de instancia (valor o valores que estan asociada una instancia en particular, es propia de cada instancia)
+          --> Variables de clase (Si actuan como variable global a todas las instancias)
+
+Metodos(Acciones a realizar en las instancias):
+
+ej: 
+  1.6 class --> SmallFloat64
+  $a class --> Character
+  #(1 2) class --> Array
+  
+  El nombre de la clase se denota con una letra mayuscula  
+--------------------------------------------------------------------
+(*) Finder (Buscador de metodos): 
+   - isVowel en Selectors
+        isVowel "<---Nombre del metodo"
+        ^'AEIOU' includes: self asUppercase "<--- Accion del metodo" 
+        
+        Si es AEIOU entonces que devuelva V o F
+        
+return (valor a retornar) "C#"
+^(valor a retornar) "SmallTalk"
+
+cadena size
+cadena --> self (sinonimo de objeto receptor del mensaje)
+
+
+
