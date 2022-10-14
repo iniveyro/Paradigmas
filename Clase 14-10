@@ -1,0 +1,32 @@
+Clase Sobre Metodos:
+
+1) Dado un Arreglo, ordenalo segun un orden descendente:
+
+Metodo:
+
+  ordenar
+    "Ordenamiento por insercion - Hecho en clase"
+    | v j |
+    v:=0.
+    j:=0.
+    2 to:(self size) do: [ :i | 
+      v:=	 self at:i.
+      j:=i.
+      [ (j > 1) and: ((self at:(j-1)) > v)]whileTrue: [ 
+        self at:j put: (self at: (j-1)).
+        j:=j-1.
+       ].
+      self at:j put:v
+       ].
+    ^self
+
+Playground:
+  
+  |x|
+  x:= Array new:4.
+  1 to: (x size) do: [ :i| x at:i put:((UIManager default request: 'Ingrese un valor: ')asInteger) ].
+  x ordenar.
+  ^x
+
+//-------------------------
+
