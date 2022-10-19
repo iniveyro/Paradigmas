@@ -1,0 +1,32 @@
+Crear el metodo Fibonacci
+
+fibonacci
+|sal|
+	((self > 0))ifTrue: [ 
+		sal:= Array new:self.
+		sal at:1 put:1.
+		(self > 1)ifTrue: [ 
+				sal at:2 put:1.
+				(self > 2)ifTrue: [
+				3 to: (self) do: [:i | sal at: (i) put: (sal at:i put:(sal at:(i-1))+(sal at:(i-2))) 
+					].
+			].
+			]ifFalse:[^'Se introdujo un numero negativo'] .
+		 ].
+	^sal
+//----------------------------
+
+Crear un metodo que elimine los numeros de un string
+
+limpiarNumeros
+	|sal|
+	sal:=''.
+	1 to: (self size) do: [:i | (((self at:i)isLetter) | ((self at:i)isSpaceSeparator)) ifTrue: [ sal:= sal,(self at: i)asString ] ].
+	^sal
+  
+//----------------------------
+
+Interesante: http://rigaux.org/language-study/syntax-across-languages-per-language/Smalltalk.html
+
+//------------------------------
+
