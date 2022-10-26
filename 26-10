@@ -1,0 +1,74 @@
+Modelado de una clase.
+
+-CPU  
+  *ID
+  *MemoriaRAM
+    -Tipo
+    -Velocidad
+    -Cantidad
+  *Procesador
+    Marca
+    Modelo
+    Gen
+    Slot
+    Core
+  *TarjetaGrafica
+  *PlacaMadre
+  *Disco/s
+  *Fuente
+  *Gabinente
+
+-Monitor
+  *ID
+  *Pulgadas
+  *Resolucion
+  *Frecuencia
+  *TipoPanel
+  
+//---------------
+
+Crear clase Calculadora que realice las siguientes operaciones con arreglos:
+  -Sumar
+  -Restar
+  -Multiplicar
+  -Dividir  
+(Con y sin acarreo)
+  -ValorPromedio
+  -Min
+  -Max
+
+Desarrollo:
+
+Object subclass: #Calculadora
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: ''
+  
+(*)Metodo Restar
+restar: arreglo menos: otroarreglo
+|sal max|
+(((arreglo)isArray) & ((otroarreglo)isArray))ifTrue: [ 
+	
+	((arreglo size)>=(otroarreglo)size)ifTrue: [max:=(arreglo size)]ifFalse: [max:=(otroarreglo size)].
+	sal:=Array new: max.
+	1 to: max do: [ :i| 
+		sal at: i put: ((arreglo at:i)-(otroarreglo at:i))
+	].
+	^sal
+]ifFalse: [ ^'Uno de los parametros "NO" es un arreglo' ].
+
+(*)Metodo Sumar
+sumar: arreglo mas: otroarreglo
+|sal max|
+(((arreglo)isArray) & ((otroarreglo)isArray))ifTrue: [ 
+	
+	((arreglo size)>=(otroarreglo)size)ifTrue: [max:=(arreglo size)]ifFalse: [max:=(otroarreglo size)].
+	sal:=Array new: max.
+	1 to: max do: [ :i| 
+		sal at: i put: ((arreglo at:i)+(otroarreglo at:i))
+	].
+
+	^sal
+]ifFalse: [ ^'Uno de los parametros "NO" es un arreglo' ].
+
+(*)Metodo Sumar con carry
