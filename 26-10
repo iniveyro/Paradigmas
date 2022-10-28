@@ -72,3 +72,25 @@ sumar: arreglo mas: otroarreglo
 ]ifFalse: [ ^'Uno de los parametros "NO" es un arreglo' ].
 
 (*)Metodo Sumar con carry
+
+sumarC: arreglo mas: otroarreglo
+|sal lon resultado sum carry|
+lon:=0.
+carry:=0.
+resultado:=0.
+sum:=0.
+((arreglo isArray)&(otroarreglo isArray))ifTrue: [ 
+	((arreglo size)=(otroarreglo size))ifTrue: [ lon:= (arreglo size) ].
+	sal:= Array new: lon+1.
+	
+	lon to: 1 by: (-1) do: [ :i| 
+		
+		sum:=((arreglo at: i) + (otroarreglo at: i) + carry).
+		(sum > 9)ifTrue: [ carry:=1. resultado := sum-10 ]ifFalse: [carry:=0. resultado := sum].
+		sal at: i put: resultado.
+				
+		].
+sal at:1 put: carry.
+^sal.
+]
+ifFalse: [ ^'Uno de los parametros NO es un arreglo' ]
