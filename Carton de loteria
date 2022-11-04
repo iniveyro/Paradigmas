@@ -1,0 +1,31 @@
+
+Object subclass: #Tabla
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'Paradigmas'
+
+fila: fila columna: columna
+	|num arr random contx lista|
+	lista:=OrderedCollection new.
+	arr:=Array2D rows: fila columns: columna.
+	1 to: fila  do: [ :i|
+		contx:=0.
+		1 to: columna do: [ :j |
+			random:= 4 atRandom.
+			
+			(random == 1)ifTrue: [ 
+				num:= 90 atRandom.
+				(lista includes: num)ifFalse: [ arr at:i at: j put: num. lista add: num. ]ifTrue: [ num:= 90 atRandom. arr at:i at: j put: num. lista add: num. ] . 
+				
+				]ifFalse: [ 
+				(contx<4)ifTrue: [ contx:=contx +1. arr at:i at: j put: 'X' 
+					]ifFalse: [ 
+					
+					num:= 90 atRandom.
+				(lista includes: num)ifFalse: [ arr at:i at: j put: num. lista add: num. ]ifTrue: [ num:= 90 atRandom. arr at:i at: j put: num. lista add: num. ] . 
+						
+					] 
+				].
+		]
+	 ].
+^arr
